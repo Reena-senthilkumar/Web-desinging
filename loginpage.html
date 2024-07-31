@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url(business.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 100px 10px;
+        }
+
+        input {
+            background-color: pink;
+        }
+
+        form {
+            border: 1px solid black;
+            height: 260px;
+            width: 250px;
+
+
+
+
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+
+        label {
+            font-style: italic;
+            color: whitesmoke;
+
+        }
+
+        input {
+            background-color: lightgreen;
+        }
+
+        input:hover {
+            background-color: green;
+        }
+
+        h1 {
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <form >
+
+        <h1>LOGIN</h1>
+        <label for="name">username:</label><br>
+        <input type="text" id="name"><br><br>
+        <label for="password">password:</label><br>
+        <input type="text" id="password"><br><br><br>
+        <input type="button" value="login" onclick="hlo()"><br>
+    </form>
+    <script>
+        function hlo() {
+            let x = document.getElementById("name").value;
+            let y = document.getElementById("password").value;
+            if ((x == "" || y == " ")) {
+                alert("MUST FILL ALL THE DETAILS");
+                return false;
+            }
+            else {
+                alert("go to next page");
+                
+            }
+        }
+
+    </script>
+</body>
+
+</html>
