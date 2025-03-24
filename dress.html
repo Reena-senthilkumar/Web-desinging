@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: rgb(107, 65, 79);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+  .row{
+    row-gap: 100px;
+    column-gap: 100px;
+  }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 150px; 
+            padding: 20px;
+        }
+
+        .grid-item {
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 5px 5px 5px black;
+            border-radius: 10px;
+            width: 300px;
+            justify-content: space-evenly;
+        }
+       .grid-item:hover{
+        box-shadow: 10px 10px 10px palevioletred;
+        -ms-transform: scale(1.2); 
+  -webkit-transform: scale(1.2); 
+  transform: scale(1.2);
+       }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10%;
+        }
+
+        b {
+            display: block;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        h3 {
+            margin: 5px 0;
+        }
+
+        h4 {
+            text-align: right;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="dress1.jpg" alt="Dress 1">
+            <b>$65</b>
+            <h3>&#9734;&#9734;&#9734;&#9734;</h3>
+            <h4>&#x2764;</h4>
+        </div>
+        <div class="grid-item">
+            <img src="dress2.jpg" alt="Dress 2">
+            <b>$56</b>
+            <h3>&#9734;&#9734;&#9734;&#9734;</h3>
+            <h4>&#x2764;</h4>
+        </div>
+        <div class="grid-item">
+            <img src="dress3.jpg" alt="Dress 3">
+            <b>$89</b>
+            <h3>&#9734;&#9734;&#9734;&#9734;&#9734;</h3>
+            <h4>&#x2764;</h4>
+        </div>
+        <div class="grid-item">
+            <img src="dress4.jpg" alt="Dress 1">
+            <b>$89</b>
+            <h3>&#9734;&#9734;&#9734;&#9734;&#9734;</h3>
+            <h4>&#x2764;</h4>
+        </div>
+        <div class="grid-item">
+            <img src="dress5.jpg" alt="Dress 2">
+            <b>$99</b>
+            <h3>&#9734;&#9734;&#9734;&#9734;&#9734;</h3>
+            <h4>&#x2764;</h4>
+        </div>
+        <div class="grid-item">
+            <img src="dress6.jpg" alt="Dress 3">
+            <b>$75</b>
+            <h3>&#9734;&#9734;&#9734;&#9734;&#9734;</h3>
+            <h4>&#x2764;</h4>
+        </div>
+    </div>
+</body>
+</html>
