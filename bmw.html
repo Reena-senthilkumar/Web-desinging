@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Luxury Showroom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        .showroom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .car-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .car-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .car-details {
+            margin-top: 10px;
+        }
+
+        .car-details h3 {
+            margin-bottom: 5px;
+        }
+
+        .car-details p {
+            color: #666;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position:relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BMW Luxury Showroom</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Models</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="showroom">
+        <div class="car-card" data-model="BMW X7" data-price="$100,000">
+            <img src="bmwx7.jpg" alt="BMW X7">
+            <div class="car-details">
+                <h3>BMW X7</h3>
+                <p>Luxury SUV</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="car-card" data-model="BMW M5" data-price="$120,000">
+            <img src="bmwm5.jpg" alt="BMW M5">
+            <div class="car-details">
+                <h3>BMW M5</h3>
+                <p>High-Performance Sedan</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+        <div class="car-card" data-model="BMW iX" data-price="$90,000">
+            <img src="bmwix.jpg" alt="BMW iX">
+            <div class="car-details">
+                <h3>BMW iX</h3>
+                <p>Electric SUV</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="carModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id = "modalCarName"></h2>
+            <p id = "modalCarPrice"></p>
+            <p>Additional details and specifications will be shown here.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 BMW Luxury Showroom</p>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            $(".view-details").click(function() {
+                var carCard = $(this).closest(".car-card");
+                var model = carCard.data("model");
+                var price = carCard.data("price");
+
+                $("#modalCarName").text(model);
+                $("#modalCarPrice").text("Price: " + price);
+                $("#carModal").css("display", "block");
+            });
+
+            $(".close").click(function() {
+                $("#carModal").css("display", "none");
+            });
+
+            $(window).click(function(event) {
+              if (event.target == document.getElementById("carModal")) {
+                $("#carModal").css("display", "none");
+              }
+            });
+        });
+    </script>
+
+</body>
+</html>
